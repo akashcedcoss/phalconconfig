@@ -1,0 +1,10 @@
+<?php
+
+use Phalcon\Config\ConfigFactory;
+
+$fileName = '/app/storage/config.php';
+$factory  = new ConfigFactory();
+$config = $factory->newInstance('php', $fileName);
+echo "<pre>";
+print_r($config->app);
+?>
