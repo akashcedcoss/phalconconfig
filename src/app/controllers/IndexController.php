@@ -11,4 +11,22 @@ class IndexController extends Controller
         $this->view->users = Users::find();
         // return '<h1>Hello World!</h1>';
     }
+    public function loginAction() {
+        $user = new Users();
+
+        //assign value from the form to $user
+        $user->assign(
+            $this->request->getPost(),
+            [
+                'username',
+                'email',
+                
+                
+            ]
+        );
+        // print_r($this->request->getPost());
+
+        // Store and check for errors
+        $success = $user->save();
+    }
 }
